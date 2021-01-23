@@ -1,0 +1,9 @@
+{
+  "infiniteLoopProtection": true,
+  "hardReloadOnChange": true,
+  "view": "terminal",
+  "template": "nuxt",
+  "container": {
+    "port": 8080
+  }
+}
