@@ -19,9 +19,9 @@
         name: "ProfileCard",
         computed: {
             ...mapState({
-                firstName: (state) => state.user.userData.firstName,
-                lastName: (state) => state.user.userData.lastName,
-                role: (state) => state.user.userData.userType
+                firstName: (state) => state.customer.userData.firstName,
+                lastName: (state) => state.customer.userData.lastName,
+                role: (state) => state.customer.userData.userType
             })
         }
 

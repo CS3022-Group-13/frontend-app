@@ -37,15 +37,6 @@
         >
           LOGIN
         </v-btn>
-        <v-btn
-            dark
-            color="#23689b"
-            width="100%"
-            class="ma-2"
-            to="/register"
-        >
-          REGISTER
-        </v-btn>
 
       </v-form>
     </v-container>
@@ -67,9 +58,9 @@ export default {
     async clickLogin() {
       let {username, password} = this
       this.isTrying = true
-      const status = await this.$store.dispatch('user/login', {username, password});
+      const status = await this.$store.dispatch('customer/login', {username, password});
       if (status.code === 200) {
-        await this.$router.push('/app')
+        await this.$router.push('/')
       } else {
         this.$vToastify.error(status.message, "Error")
         console.log(status)

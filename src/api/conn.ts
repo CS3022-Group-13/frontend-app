@@ -1,7 +1,7 @@
 import axios, {AxiosInstance} from "axios";
 
 const LOCAL_API = "http://localhost:8000"
-const REMOTE_API = "http://ec2-100-25-45-111.compute-1.amazonaws.com:8000"
+const REMOTE_API = "https://eims-rest-api.herokuapp.com"
 
 class ApiConnection {
     static readonly instance = new ApiConnection();

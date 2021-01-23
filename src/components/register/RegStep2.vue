@@ -36,7 +36,7 @@
             prepend-icon="mdi-phone"
             label="Telephone"
             type="text"
-            v-model="userData.telephoneNumber"
+            v-model="userData.telephone"
             :rules="rules.telephone"
             required
     ></v-text-field>
@@ -48,18 +48,10 @@
                 label="Type"
                 :items="roles"
                 :rules="[s => roles.includes(s) || 'Select user role']"
-                v-model="userData.role"
+                v-model="userData.userType"
         ></v-select>
       </v-col>
       <v-col>
-        <v-select
-                v-if="userData.role.includes('Divisional')"
-                prepend-icon="mdi-home-account"
-                label="Division"
-                :items="divisions"
-                :rules="[s => (!userData.role.includes('Divisional')) || (divisions.includes(s)) || 'Select divisional office']"
-                v-model="userData.office"
-        ></v-select>
       </v-col>
     </v-row>
 
@@ -98,10 +90,14 @@ export default {
             firstName: '',
             lastName: '',
             email: '',
-            telephoneNumber: '',
-            role: '',
-            office: ''
+            telephone: '',
+            userType: '',
         },
+        roles: [
+          "Administrator",
+          "Sales Manager",
+          "Inventory Manager"
+        ],
         rules: {
             telephone: [
                 s => {
@@ -119,22 +115,10 @@ export default {
             ]
         }
     }),
-    computed: {
-        divisions() {
-            return this.$store.getters["utils/getNameOnly_Divisions"]
-        },
-        roles() {
-            return this.$store.getters["utils/getNameOnly_UserRoles"]
-        }
-    },
     methods: {
         async submit() {
             await this.$refs.form.validate();
             if (this.valid) {
-                if (!this.userData.role.includes('Divisional')) {
-                    delete this.userData.office
-                }
-
                 this.$emit('submit', this.userData)
             }
         }

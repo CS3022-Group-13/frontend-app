@@ -23,6 +23,7 @@ export const userApi = {
      */
     async register(userData: any): Promise<[string, Status]> {
       try {
+          console.log(userData)
           const res = await apiConn.post('api/user/register', userData)
           return [res.data.data, toStatus(res)]
       } catch (e) {
@@ -40,7 +41,7 @@ export const userApi = {
         try {
             const res = await apiConn.post('api/user/login', {username, password});
             const {token, data} = res.data;
-            return [{token, userData:data}, toStatus(res)];
+            return [{token, userData:data.userData}, toStatus(res)];
         } catch (e) {
             return [null, toStatus(e.response)]
         }
@@ -52,7 +53,7 @@ export const userApi = {
      */
     async getUser(condition: any): Promise<[any, Status]> {
         try {
-            const res = await apiConn.get('api/user/get-user');
+            const res = await apiConn.get('api/user/get-users');
             return [res.data.data, toStatus(res)];
         } catch (e) {
             return [null, toStatus(e.response)]
@@ -92,7 +93,7 @@ export const userApi = {
      */
     async verifyUser(userId: string): Promise<Status> {
         try {
-            const res = await apiConn.put(`api/user/verify-user/${userId}`);
+            const res = await apiConn.put(`api/user/change-status/${userId}`, {verified: true});
             return toStatus(res);
         } catch (e) {
             return toStatus(e.response)
@@ -105,7 +106,7 @@ export const userApi = {
      */
     async disableUser(userId: string): Promise<Status> {
         try {
-            const res = await apiConn.put(`api/user/disable-user/${userId}`);
+            const res = await apiConn.put(`api/user/change-status/${userId}`, {verified: false});
             return toStatus(res);
         } catch (e) {
             return toStatus(e.response)

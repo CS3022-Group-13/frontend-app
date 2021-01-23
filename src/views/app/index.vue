@@ -25,7 +25,6 @@
         <v-icon>mdi-home-circle</v-icon>
       </v-btn>
 
-<!--      <AppNotification/>-->
       <AppMenu/>
     </v-app-bar>
 

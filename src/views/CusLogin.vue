@@ -1,6 +1,6 @@
 <template>
     <v-app>
-      <h1 class="page-header">EIMS - User Login</h1>
+      <h1 class="page-header">EIMS - Customer Login</h1>
         <v-main class="bg4">
             <v-container
                     fluid
@@ -18,8 +18,8 @@
 
 <script>
     import store from '../store'
-    import LoginForm from "../components/user/LoginForm.vue";
-    import LoggedInfo from "../components/user/LoggedInfo";
+    import LoginForm from "../components/customer/LoginForm.vue";
+    import LoggedInfo from "../components/customer/LoggedInfo";
     import HomeButton from "../components/home/HomeButton";
 
     export default {

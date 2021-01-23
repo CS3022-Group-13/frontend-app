@@ -19,15 +19,14 @@
             dense
             nav
     >
-      <NavItem name="Dashboard" icon="mdi-view-dashboard" link="/app"/>
+      <!-- <NavItem name="Dashboard" icon="mdi-view-dashboard" link="/app"/>
 
-      <v-divider/>
+      <v-divider/> -->  
 
       <AdminNavItems v-if="role === 'Administrator'"/>
-      <DisOffNavItems v-else-if="role === 'District Officer'" />
-      <DisSecNavItems v-else-if="role === 'District Secretariat'" />
-      <DivOffNavItems v-else-if="role === 'Divisional Officer'" />
-      <DivSecNavItems v-else-if="role === 'Divisional Secretariat'" />
+      <DisOffNavItems v-else-if="role === 'Sales Manager'" />
+      <DisSecNavItems v-else-if="role === 'Inventory Manager'" />
+      <DivSecNavItems v-else-if="role === 'Customer'" />
 
     </v-list>
 

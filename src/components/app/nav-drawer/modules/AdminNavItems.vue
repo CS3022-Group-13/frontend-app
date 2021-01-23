@@ -1,16 +1,16 @@
 <template>
   <div>
-    <NavItem
+    <!-- <NavItem
             name="Find Complaint"
             icon="mdi-file-document-edit"
             link="/app/complaint/find-complaint"
-    />
+    /> -->
     <NavItem
-            name="User Account"
+            name="User Accounts"
             icon="mdi-account"
             link="/app/utils/user-accounts"
     />
-    <NavItem
+    <!-- <NavItem
             name="Divisional Offices"
             icon="mdi-office-building"
             link="/app/utils/divisions"
@@ -19,7 +19,7 @@
             name="Grama N. Offices "
             icon="mdi-home"
             link="/app/utils/gn-offices"
-    />
+    /> -->
   </div>
 </template>
 

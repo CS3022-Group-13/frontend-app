@@ -17,7 +17,7 @@
         <ActionButton
                 v-if="item.verified"
                 color="red"
-                :disabled="item.role === 'Administrator'"
+                :disabled="item.userType === 'Administrator'"
                 @click="disableUser(item)"
         >Disable
         </ActionButton>
@@ -50,13 +50,6 @@ export default {
         search: '',
         headers: [
             {
-                text: 'Username',
-                align: 'start',
-                sortable: true,
-                value: 'username',
-                width: 200,
-            },
-            {
                 text: 'First Name',
                 value: 'firstName'
             },
@@ -65,8 +58,8 @@ export default {
                 value: 'lastName'
             },
             {
-                text: 'Role',
-                value: 'role'
+                text: 'Type',
+                value: 'userType'
             },
             {
                 text: 'Actions',
@@ -99,18 +92,13 @@ export default {
     async created() {
         this.loading = true
         const [userList, status] = await api.user.getUser({})
+        console.log(userList)
         if (status.code === 200) {
             this.users = userList
         } else {
-            this.$notify(status.message, "error")
+            this.$vToastify(status.message, "Error")
         }
         this.loading = false
     }
 }
 </script>
-
-<style lang="scss">
-.action-button {
-
-}
-</style>

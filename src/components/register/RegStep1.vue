@@ -8,7 +8,6 @@
                 required
                 v-model="username"
                 :error-messages="username_errors"
-
         ></v-text-field>
 
         <v-text-field
@@ -76,7 +75,7 @@
                 this.loading = true;
                 await this.validateUsername()
                 await this.validatePassword()
-                await this.validateUsername()
+                await this.validateConfirmation()
 
                 if (this.valid) {
                     const {username, password} = this
@@ -86,14 +85,8 @@
             },
 
             async validateUsername() {
-                if (this.username.length < 6) {
-                    this.username_errors = ['Username must be at least 6 character long']
-                    return;
-                }
-
-                const [res, status] = await api.user.checkUsername(this.username)
-                if (status.code !== 200 || res !== false) {
-                    this.username_errors = ['Username is taken']
+                if (this.username.length < 5) {
+                    this.username_errors = ['Username must be at least 5 character long']
                     return;
                 }
 
@@ -101,8 +94,8 @@
             },
 
             async validatePassword() {
-                if (this.password.length < 6) {
-                    this.password_errors = ['Password must be at least 6 character long']
+                if (this.password.length < 5) {
+                    this.password_errors = ['Password must be at least 5 character long']
                     return;
                 }
 

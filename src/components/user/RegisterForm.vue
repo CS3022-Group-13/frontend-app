@@ -74,7 +74,7 @@ export default {
             this.loading = true
             const [_, status] = await api.user.register(this.userData)
             if (status.code !== 200) {
-                this.$notify(status.message, 'error')
+                this.$vToastify.error(status.message, "error"); 
                 this.loading = false
                 return
             }

@@ -2,17 +2,10 @@ import {ActionTree, GetterTree, Module, MutationTree} from "vuex";
 import {RootState} from "@/store";
 import {api} from "@/api";
 
-type Office = { name: string, address: string }
 type Role = { role: string, description: string }
-type ComState = { state: string, description: string }
-type ComType = { type: string, description: string }
 
 export interface UtilsData {
-    divisions: Office[],
-    gn_offices: Office[],
     roles: Role[],
-    comTypes: ComType[],
-    comStates: ComState[]
 }
 
 const state: UtilsData = {

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import {appRoutes} from "@/router/app";
+import {cusRoutes} from "@/router/cus";
 
 import Home from '../views/home/Home.vue'
 
@@ -18,9 +19,14 @@ const routes: Array<RouteConfig> = [
         component: () => import(/* webpackChunkName: "user" */ '../views/Register.vue')
     },
     {
-        path: '/login',
+        path: '/user/login',
         name: 'User Login',
         component: () => import(/* webpackChunkName: "user" */ '../views/Login.vue')
+    },
+    {
+        path: '/customer/login',
+        name: 'User Login',
+        component: () => import(/* webpackChunkName: "user" */ '../views/CusLogin.vue')
     },
     {
         path:'/add-complaint',
@@ -32,6 +38,11 @@ const routes: Array<RouteConfig> = [
         path: '/app',
         component: () => import(/* webpackChunkName: "web-app" */ '../views/app/index.vue'),
         children: appRoutes
+    },
+    {
+        path: '/customer',
+        component: () => import(/* webpackChunkName: "web-app" */ '../views/app/index.vue'),
+        children: cusRoutes
     }
 ]
 
