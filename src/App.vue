@@ -69,7 +69,7 @@
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: #3aafa9;
+        background:#1aa6b7;
     }
 
     /* Handle on hover */

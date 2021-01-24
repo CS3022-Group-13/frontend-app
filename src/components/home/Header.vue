@@ -31,11 +31,12 @@
         </v-row>
 
         <v-col cols="12" class="py-2">
-          <v-btn-toggle tile color="deep-purple accent-3" group>
-            <CustomButton text="Customer Login" route="/login/customer" />
-            <CustomButton text="User Login" route="/login/user" />
-            <CustomButton text="About" route="/about" />
-          </v-btn-toggle>
+            <v-btn-toggle tile color="deep-purple accent-3" group>
+                <CustomButton text="Home" route="/"/>  
+                <CustomButton class="custom-button" text="Customer Login" route="/login/customer" />  
+                <CustomButton text="User Login" route="/login/user" />
+                <CustomButton text="About" route="/about" />
+            </v-btn-toggle>
         </v-col>
       </v-col>
     </v-container>
@@ -53,7 +54,7 @@ export default {
 </script>>
 
 
-<style></style>
+<style>
 
 .title {
   size: 60px;
@@ -63,4 +64,6 @@ export default {
   margin-top: 20px;
   text-align: center;
 }
+
+
 </style>>

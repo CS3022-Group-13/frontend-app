@@ -1,9 +1,10 @@
 <template>
     <div>
        <v-btn
+            class="custom-button"
             :to="route"
             tile
-            color="#51c2d5"
+            
             >
               {{text}}
         </v-btn>
@@ -22,5 +23,14 @@
 </script>
 
 <style scoped>
+
+.custom-button{
+    color:#1aa6b7;
+    font-weight: bold;
+}
+.custom-button:hover{
+    color:black;
+}
+    
 
 </style>
