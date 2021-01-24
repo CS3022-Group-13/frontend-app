@@ -1,8 +1,7 @@
 import Vue from 'vue';
-import Vuex, { Module } from 'vuex';
-import { user_module } from '@/store/modules/user';
+import Vuex from 'vuex';
+import {user_module } from '@/store/modules/user';
 import {customer_module} from "@/store/modules/customer";
-// import {app_module} from "@/store/modules/app";
 
 Vue.use(Vuex);
 

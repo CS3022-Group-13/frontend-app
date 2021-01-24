@@ -20,12 +20,7 @@ class ApiConnection {
     get = (url: string, query: any = undefined) => this.conn.get(url, {params: query});
     post = (url: string, data: any = undefined, query: any = undefined) => this.conn.post(url, data, {params: query});
     put = (url: string, data: any = undefined, query: any = undefined) => this.conn.put(url, data, {params: query})
-
-    post_file = (url: string, formData: FormData) => this.conn.post(url, formData,
-        {headers: {'Content-Type': 'multipart/form-data'}}
-    )
-
-    get_file = (url: string) => this.conn.get(url, {responseType: "blob"})
+    delete = (url: string) => this.conn.delete(url);
 
     enableAuth(token: string) {
         this.conn.defaults.headers.Authorization = `Bearer ${token}`

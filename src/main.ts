@@ -5,7 +5,8 @@ import router from './router';
 import store from './store';
 
 import vuetify from './plugins/vuetify';
-// ts-ignore
+
+// @ts-ignore
 import VueToastify from 'vue-toastify';
 
 Vue.config.productionTip = false;

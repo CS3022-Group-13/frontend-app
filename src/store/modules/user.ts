@@ -24,7 +24,7 @@ const getters: GetterTree<UserState, RootState> = {
     isAuth(state) {
         return state.userData.userType != ''
     },
-    getRole(state) {
+    getType(state) {
         if (state.userData && state.userData.userType) {
             return state.userData.userType
         }

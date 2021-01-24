@@ -1,9 +1,10 @@
-import {userApi} from "@/api/modules/user";
-import {utilApi} from "@/api/modules/util";
 import {apiConn} from "@/api/conn";
-import {complaintApi} from "@/api/modules/complaint";
-import {fileApi} from "@/api/modules/file";
+// import {utilApi} from "@/api/modules/util";
+import {userApi} from "@/api/modules/user";
 import {customerApi} from "@/api/modules/customer";
+import {orderApi} from "@/api/modules/order";
+import {paymentApi} from "@/api/modules/payment";
+import {productApi} from "@/api/modules/product";
 
 const token = {
     set(token: string) {
@@ -14,20 +15,11 @@ const token = {
     }
 }
 
-export interface API {
-    user: typeof userApi
-    util: typeof utilApi
-    complaint: typeof complaintApi
-    customer: typeof customerApi
-    file: typeof fileApi
-    token: typeof token
-}
-
-export const api: API = {
+export const api = {
     user: userApi,
-    util: utilApi,
-    complaint: complaintApi,
     customer: customerApi,
-    file: fileApi,
+    order: orderApi,
+    payment: paymentApi,
+    product: productApi,
     token
 }

@@ -2,19 +2,7 @@ import {apiConn} from "@/api/conn";
 import { toStatus, Status } from "@/api/core";
 
 export const userApi = {
-    /**
-     * Check whether a username is already registered
-     * @param username
-     * @return true/false (true if exist)
-     */
-    async checkUsername(username: string): Promise<[boolean, Status]> {
-        try {
-            const res = await apiConn.get(`api/user/check-username/${username}`)
-            return [res.data.data, toStatus(res)]
-        } catch (e) {
-            return [e.response.data.data, toStatus(e.response)]
-        }
-    },
+
 
     /**
      * Register a new user to the system
@@ -60,18 +48,18 @@ export const userApi = {
         }
     },
 
-    async getUserCount(condition: any): Promise<[number, Status]> {
+    async getUserDetails(userId: string): Promise<[any, Status]> {
         try {
-            const res = await apiConn.get('api/user/get-count', condition)
-            return [res.data.data, toStatus(res)]
+            const res = await apiConn.get(`api/user/get-details/${userId}`);
+            return [res.data.data, toStatus(res)];
         } catch (e) {
-            return [-1, toStatus(e.response)]
+            return [null, toStatus(e.response)]
         }
     },
 
     async updateUser(userId: string, data: any): Promise<Status> {
         try {
-            const res = await apiConn.put(`api/user/update-user/${userId}`, data);
+            const res = await apiConn.put(`api/user/update-details/${userId}`, data);
             return toStatus(res);
         } catch (e) {
             return toStatus(e.response)
@@ -80,7 +68,7 @@ export const userApi = {
 
     async updateCredentials(userId: string, data: any): Promise<Status> {
         try {
-            const res = await apiConn.put(`api/user/update-credential/${userId}`, data);
+            const res = await apiConn.put(`api/user/update-credentials  /${userId}`, data);
             return toStatus(res);
         } catch (e) {
             return toStatus(e.response)
@@ -111,5 +99,16 @@ export const userApi = {
         } catch (e) {
             return toStatus(e.response)
         }
+    },
+
+    async resetPassword(userId: string): Promise<Status> {
+        try {
+            const res = await apiConn.put(`api/user/reset-pass/${userId}`);
+            return toStatus(res);
+        } catch (e) {
+            return toStatus(e.response)
+        }
     }
+
+
 }
