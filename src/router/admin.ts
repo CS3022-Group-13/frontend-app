@@ -1,6 +1,6 @@
 import {RouteConfig} from "vue-router";
 
-export const cusRoutes: Array<RouteConfig> = [
+export const adminRoutes: Array<RouteConfig> = [
     // {
     //     path: '',
     //     name: 'Dashboard',

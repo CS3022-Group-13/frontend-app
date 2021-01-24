@@ -23,7 +23,7 @@
                 <v-row>
                   <div class="title">
                     <h1>Engage Industrial Management System</h1>
-                    <h3 class="quote">Indusrty work made easier...</h3>
+                    <h3 class="quote">Industry work made easier...</h3>
                   </div>
                 </v-row>
               </v-col>
@@ -32,9 +32,9 @@
         </v-row>
 
         <v-col cols="12" class="py-2">
-          <v-btn-toggle v-model="text" tile color="deep-purple accent-3" group>
-            <LoginButton text="Customer Login" route="/customer/login" />
-            <LoginButton text="User Login" route="/user/login" />
+          <v-btn-toggle tile color="deep-purple accent-3" group>
+            <LoginButton text="Customer Login" route="/login/customer" />
+            <LoginButton text="User Login" route="/login/user" />
             <LoginButton text="About" route="/about" />
             <LoginButton text="Help" route="/help" />
           </v-btn-toggle>
@@ -63,13 +63,13 @@
           <v-row>
             <v-container style="width: 70%" class="pa-0">
               <v-card-title style="color: #545863">
-                {{ lang.CTA }}</v-card-title
+                </v-card-title
               >
             </v-container>
 
             <v-container style="width: 20%">
               <v-btn to="/add-complaint" color="error">
-                {{ lang.button }}</v-btn
+                </v-btn
               >
             </v-container>
           </v-row>
@@ -92,9 +92,9 @@
               "
             >
               <v-container class="text-center" style="padding: 16%">
-                <h3>{{ lang.block1title }}</h3>
+                <h3></h3>
                 <br />
-                <p style="text-align: justify">{{ lang.block1 }}</p>
+                <p style="text-align: justify">}</p>
               </v-container>
             </v-card>
           </v-col>
@@ -127,13 +127,13 @@
               "
             >
               <v-container class="text-center" style="padding: 16%">
-                <h3>{{ lang.block2title }}</h3>
+                <h3>asd</h3>
                 <br />
                 <p style="text-align: justify">
-                  {{ lang.block2 }} <br /><br />
-                  {{ lang.benefits1 }} <br />
-                  {{ lang.benefits2 }} <br />
-                  {{ lang.benefits3 }}
+                  asd <br /><br />
+                  asd <br />
+                  asd <br />
+                  asd
                 </p>
               </v-container>
             </v-card>
@@ -154,7 +154,7 @@
                 indeterminate="false"
               />
             </v-row>
-            <v-row class="stats"> {{ lang.progressbar1 }}</v-row>
+            <v-row class="stats"> asd</v-row>
           </v-col>
 
           <v-col>
@@ -165,7 +165,7 @@
                 indeterminate="false"
               />
             </v-row>
-            <v-row class="stats"> {{ lang.progressbar2 }}</v-row>
+            <v-row class="stats"> asd</v-row>
           </v-col>
 
           <v-col>
@@ -176,7 +176,7 @@
                 indeterminate="false"
               />
             </v-row>
-            <v-row class="stats"> {{ lang.progressbar3 }}</v-row>
+            <v-row class="stats"> asd</v-row>
           </v-col>
         </v-row>
       </v-bottom-navigation>
@@ -190,72 +190,57 @@
           <v-col cols="6" md="4" class="pd-3">
             <v-card class="primary pa-12 pl-16 pr-16 ma-0" tile>
               <v-card-title class="pa-0 pb-5">
-                {{ lang.associations }}</v-card-title
+                asd</v-card-title
               >
-              {{ lang.ds }} <br />
+              asd<br />
               <br />
 
               <v-btn class="mx-1" color="black" outlined>
-                {{ lang.Galle }}
+                asd
               </v-btn>
               <br />
               <br />
-              {{ lang.division }}
+              ads
               <br />
               <br />
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Akmeemana }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Ambalangoda }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Baddegama }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Balapitiya }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.BopePoddala }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Benthota }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Elpitiya }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.GalleFourGravets }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Habaraduwa }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Imaduwa }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Hikkaduwa }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Karandeniya }}</v-btn
+                asd</v-btn
               >
               <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Nagoda }}</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Neluwa }}</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Niyagama }}</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.WelivitiyaDivithura }}</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Yakkalamulla }}</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                {{ lang.Gonapinuwala }}</v-btn
+                asd</v-btn
               >
             </v-card>
           </v-col>
@@ -274,13 +259,10 @@
 </template>
 
 <script>
-import HomeButton from "@/components/home/HomeButton";
 import LoginButton from "@/components/user/LoginButton";
 import FooterCard from "@/components/home/FooterCard";
 import ProgressIndicator from "@/components/home/ProgressIndicator";
 import LanguageSelector from "@/components/home/LanguageSelector";
-import { SIN, EN } from "@/views/home/langs";
-import { api } from "@/api";
 
 export default {
   name: "Home",
@@ -309,30 +291,6 @@ export default {
     inProgressCount: 0,
     solvedCount: 0,
   }),
-  computed: {
-    lang() {
-      return this.language === "english" ? EN : SIN;
-    },
-  },
-  methods: {
-    change(lang) {
-      this.language = lang;
-    },
-  },
-  async created() {
-    const [count1, status1] = await api.customer.getCustomerCount({});
-    if (status1.code === 200) this.customerCount = count1;
-
-    const [count2, status2] = await api.complaint.getComplaintCount({
-      status: "In Progress",
-    });
-    if (status2.code === 200) this.inProgressCount = count2;
-
-    const [count3, status3] = await api.complaint.getComplaintCount({
-      status: "Solved",
-    });
-    if (status3.code === 200) this.solvedCount = count3;
-  },
 };
 </script>
 

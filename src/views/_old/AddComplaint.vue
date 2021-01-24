@@ -20,9 +20,9 @@
 <script>
 
 
-import HomeButton from "../components/home/HomeButton";
-import ComplaintForm from "../components/user/ComplaintForm";
-import PopAlert from "../components/PopAlert";
+import HomeButton from "../../components/home/HomeButton";
+import ComplaintForm from "../../components/user/ComplaintForm";
+import PopAlert from "../../components/PopAlert";
 
 export default {
     name: "AddComplaint",

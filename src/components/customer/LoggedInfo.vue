@@ -22,8 +22,8 @@
 </template>
 
 <script>
-    import ProfileCard from "@/components/customer/ProfileCard";
-    import LogoutButton from "@/components/customer/LogoutButton";
+    import ProfileCard from "@/components/customer/ProfileCard.vue";
+    import LogoutButton from "@/components/customer/LogoutButton.vue";
 
     export default {
         name: "LoggedInfo",

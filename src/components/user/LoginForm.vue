@@ -72,7 +72,6 @@ export default {
         await this.$router.push('/app')
       } else {
         this.$vToastify.error(status.message, "Error")
-        console.log(status)
       }
       this.isTrying = false
     }
