@@ -12,12 +12,13 @@ export const paymentApi = {
         }
     },
 
-    async findPayment(cond: any): Promise<Status> {
+    async findPayment(cond: any): Promise<[any, Status]> {
         try {
             const res = await apiConn.get(`api/payment/get-details`, cond);
-            return toStatus(res);
+            console.log(res)
+            return [[], toStatus(res)];
         } catch (e) {
-            return toStatus(e.response);
+            return [null, toStatus(e.response)];
         }
     },
 

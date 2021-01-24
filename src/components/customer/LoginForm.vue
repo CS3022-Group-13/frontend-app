@@ -59,8 +59,9 @@ export default {
       let {username, password} = this
       this.isTrying = true
       const status = await this.$store.dispatch('customer/login', {username, password});
+      console.log(status)
       if (status.code === 200) {
-        await this.$router.push('/')
+        await this.$router.push('/customer')
       } else {
         this.$vToastify.error(status.message, "Error")
         console.log(status)

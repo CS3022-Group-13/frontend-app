@@ -19,9 +19,8 @@
             dense
             nav
     >
-      <!-- <NavItem name="Dashboard" icon="mdi-view-dashboard" link="/app"/>
 
-      <v-divider/> -->  
+      <v-divider/>
 
       <slot />
 
@@ -38,8 +37,8 @@
 
 <script>
 import NavItem from "./NavItem";
-import ProfileCard from "@/components/user/ProfileCard";
-import LogoutButton from "@/components/user/LogoutButton";
+import ProfileCard from "@/components/customer/ProfileCard";
+import LogoutButton from "@/components/customer/LogoutButton";
 
 export default {
     name: "NavDrawer",
@@ -56,7 +55,7 @@ export default {
     }),
     computed: {
         userType() {
-            return this.$store.getters["user/getType"]
+            return this.$store.getters["customer/getType"]
         }
     }
 }

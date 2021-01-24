@@ -25,7 +25,7 @@
         methods: {
             async logout() {
                 await this.$store.dispatch('customer/logout')
-                await this.$router.push('/cus/login')
+                await this.$router.push('/login/customer')
             }
         }
     }

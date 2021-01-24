@@ -52,23 +52,12 @@ const routes: Array<RouteConfig> = [
         path: '/sales',
         component: () => import(/* webpackChunkName: "web-app" */ '../views/app/sMan/index.vue'),
         children: salesRoutes
-    },
-
-    // {
-	// 	path: '/sales',
-	// 	component: () => import(/* webpackChunkName: "web-app" */ '../views/app/index.vue'),
-	// 	children: salesRoutes
-	// },
-	// {
-	// 	path: '/inventory',
-	// 	component: () => import(/* webpackChunkName: "web-app" */ '../views/app/index.vue'),
-	// 	children: inventoryRoutes
-	// },
-	// {
-	// 	path: '/customer',
-	// 	component: () => import(/* webpackChunkName: "web-app" */ '../views/app/index.vue'),
-	// 	children: cusRoutes
-	// }
+	},
+	{
+        path: '/customer',
+        component: () => import(/* webpackChunkName: "web-app" */ '../views/customer/index.vue'),
+        children: cusRoutes
+    }
 ];
 
 const router = new VueRouter({

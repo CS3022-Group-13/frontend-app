@@ -5,7 +5,7 @@ import {api} from "@/api";
 export interface CustomerState {
     token?: string
     customerData: {
-        customerId?: string | null
+        customerId: string | null
         firstName?: string
         lastName?: string
         email?: string
@@ -16,6 +16,7 @@ export interface CustomerState {
 
 const state: CustomerState = {
     customerData: {
+        customerId: '',
         userType: ''
     }
 }
@@ -38,7 +39,7 @@ const mutations: MutationTree<CustomerState> = {
     },
 
     CLEAR_USER_DATA: (state) => {
-        state.customerData = { userType: ''}
+        state.customerData = { userType: '', customerId: ''}
     },
 
     SET_TOKEN(state, payload) {
@@ -49,6 +50,7 @@ const mutations: MutationTree<CustomerState> = {
 export const actions: ActionTree<CustomerState, RootState> = {
     async login(store, payload) {
         const [data, status] = await api.customer.login(payload.username, payload.password)
+        console.log(data, status)
         if (status.code === 200) {
             await store.commit('SET_USER_DATA', {...data.customerData, userType: "Customer"})
             await store.commit('SET_TOKEN', data.token)

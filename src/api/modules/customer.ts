@@ -7,8 +7,7 @@ export const customerApi = {
     async login(username: string, password: string): Promise<[any, Status]> {
         try {
             const res = await apiConn.post('api/customer/login', {username, password});
-            const {token, data} = res.data;
-            return [{token, customerData: data.customerData}, toStatus(res)];
+            return [{token: res.data.token, customerData: res.data.data.customerData}, toStatus(res)];
         } catch (e) {
             return [null, toStatus(e.response)]
         }
