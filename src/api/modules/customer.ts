@@ -6,7 +6,7 @@ export const customerApi = {
 
     async login(username: string, password: string): Promise<[any, Status]> {
         try {
-            const res = await apiConn.post('api/cus/login', {username, password});
+            const res = await apiConn.post('api/customer/login', {username, password});
             const {token, data} = res.data;
             return [{token, customerData: data.customerData}, toStatus(res)];
         } catch (e) {
@@ -16,17 +16,18 @@ export const customerApi = {
 
     async addCustomer(customerData: any): Promise<[string, Status]> {
         try {
-            const res = await apiConn.post('api/cus/add-cus', customerData)
+            const res = await apiConn.post('api/customer/add-customer', customerData)
             return [res.data.data, toStatus(res)]
         } catch (e) {
             return ['', toStatus(e.response)]
         }
     },
 
-    async getCustomer(condition: any): Promise<[any[], Status]> {
+    async getCustomer(condition: any): Promise<[any, Status]> {
         try {
-            const res = await apiConn.get('api/cus/get-details', condition)
-            return [res.data.data, toStatus(res)]
+            const res = await apiConn.get('api/customer/get-details', condition)
+            console.log(res.data)
+            return [res.data.data.data, toStatus(res)]
         } catch (e) {
             return [[], toStatus(e.response)]
         }

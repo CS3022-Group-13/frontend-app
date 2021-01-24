@@ -3,7 +3,7 @@ import {RouteConfig} from "vue-router";
 export const adminRoutes: Array<RouteConfig> = [
     {
         path: '',
-        name: 'Dashboard',
+        name: 'Admin Dashboard',
         component: () => import(/* webpackChunkName: "admin-app" */ '../views/app/admin/Dashboard.vue')
     },
     {

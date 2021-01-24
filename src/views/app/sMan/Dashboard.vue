@@ -2,7 +2,7 @@
   <v-container>
     <v-card elevation="0" class="pa-2 ma-4">
       <v-card-title class="font-weight-bold" style="font-size: 40px">
-        EIMS Administrator Panel
+        EIMS Sales Manager Panel
       </v-card-title>
       <v-card-subtitle style="font-size: 15px; letter-spacing: 1px;" class="mt-1">
         You are signed in as <span class="font-weight-bold"> {{ fullName }} ({{ userType }}) </span>

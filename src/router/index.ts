@@ -4,6 +4,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import { adminRoutes } from '@/router/admin';
 import { cusRoutes } from '@/router/cus';
 import {inventoryRoutes} from "@/router/iMan"
+import {salesRoutes} from "@/router/sMan";
 
 import Home from '../views/Home.vue';
 import About from '@/views/About.vue';
@@ -46,8 +47,14 @@ const routes: Array<RouteConfig> = [
 		path: '/inventory',
 		component: () => import(/* webpackChunkName: "web-app" */ '../views/app/iMan/index.vue'),
 		children: inventoryRoutes
-	}
-	// {
+	},
+    {
+        path: '/sales',
+        component: () => import(/* webpackChunkName: "web-app" */ '../views/app/sMan/index.vue'),
+        children: salesRoutes
+    },
+
+    // {
 	// 	path: '/sales',
 	// 	component: () => import(/* webpackChunkName: "web-app" */ '../views/app/index.vue'),
 	// 	children: salesRoutes

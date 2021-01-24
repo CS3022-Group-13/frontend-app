@@ -3,7 +3,7 @@ import {RouteConfig} from "vue-router";
 export const inventoryRoutes: Array<RouteConfig> = [
     {
         path: '',
-        name: 'Dashboard',
+        name: 'Inventory Dashboard',
         component: () => import(/* webpackChunkName: "admin-app" */ '../views/app/iMan/Dashboard.vue')
     },
     {
