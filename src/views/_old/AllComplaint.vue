@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import {api} from "../../../api";
-import DataTable from "../../../components/app/data-table/DataTable";
-import ActionButton from "../../../components/app/data-table/ActionButton";
+import {api} from "@/api";
+import DataTable from "@/components/app/data-table/DataTable";
+import ActionButton from "@/components/app/data-table/ActionButton";
 
 export default {
     name: "AllComplaint",

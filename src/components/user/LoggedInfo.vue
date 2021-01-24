@@ -1,24 +1,15 @@
 <template>
-    <v-container
-            class="login-form-container elevation-4  pa-7">
+  <v-container class="login-form-container elevation-4 pa-7">
+    <ProfileCard />
 
-        <ProfileCard/>
+    <v-row class="content-center">
+      <v-btn dark color="success" class="ma-2" width="90%" @click="goDashboard">
+        DASHBOARD
+      </v-btn>
+    </v-row>
 
-        <v-row class="content-center">
-            <v-btn
-                    dark
-                    color="success"
-                    class="ma-2"
-                    width="90%"
-                    to="/app"
-            >
-                DASHBOARD
-            </v-btn>
-        </v-row>
-
-        <LogoutButton/>
-
-    </v-container>
+    <LogoutButton />
+  </v-container>
 </template>
 
 <script>
@@ -30,18 +21,34 @@
         components: {
             ProfileCard,
             LogoutButton
+        },
+        methods: {
+            async goDashboard() {
+                const userType = this.$store.getters["user/getType"]
+                switch (userType) {
+                case "Administrator":
+                    await this.$router.push('/admin')
+                    break
+                case "Sales Manager":
+                    await this.$router.push('/sales')
+                    break
+                case "Inventory Manager":
+                    await this.$router.push('/inventory')
+                    break
+                }
+            }
         }
     }
 </script>
 
 <style scoped>
-    .content-center {
-        justify-content: center
-    }
+.content-center {
+  justify-content: center;
+}
 
-    .profile-card {
-        margin-bottom: 12px;
-        padding: 0;
-        width: 95%;
-    }
+.profile-card {
+  margin-bottom: 12px;
+  padding: 0;
+  width: 95%;
+}
 </style>

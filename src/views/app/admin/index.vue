@@ -28,7 +28,10 @@
       <AppMenu/>
     </v-app-bar>
 
-    <NavDrawer :toggle="drawer" />
+    <NavDrawer :toggle="drawer">
+        <NavItem name="Dashboard" icon="mdi-view-dashboard" link="/admin"/>  
+        <NavItem name="Manage Users" icon="mdi-account" link="/admin/users"/>  
+    </NavDrawer>
 
     <v-main class="secondary">
       <div class="main fill-height">
@@ -40,12 +43,13 @@
 </template>
 
 <script>
-import store from "../../store"
-import NavDrawer from "../../components/app/nav-drawer/NavDrawer";
-import DrawerToggle from "../../components/app/nav-drawer/DrawerToggle";
-import AddressBar from "../../components/app/AddressBar";
-import AppMenu from "../../components/app/AppMenu";
-import AppNotification from "../../components/app/AppNotification";
+import store from "@/store"
+import NavDrawer from "@/components/app/nav-drawer/NavDrawer";
+import NavItem from "@/components/app/nav-drawer/NavItem";
+import DrawerToggle from "@/components/app/nav-drawer/DrawerToggle";
+import AddressBar from "@/components/app/AddressBar";
+import AppMenu from "@/components/app/AppMenu";
+import AppNotification from "@/components/app/AppNotification";
 
 export default {
     name: "App",
@@ -55,6 +59,7 @@ export default {
         AddressBar,
         NavDrawer,
         DrawerToggle,
+        NavItem
     },
     data: () => ({
         drawer: true
@@ -63,7 +68,7 @@ export default {
     async beforeRouteEnter(from, to, next) {
         await store.dispatch('user/loadLocalStorage');
         if (store.getters['user/isAuth'] === false) {
-            next('/login');
+            next('/login/user');
             return;
         }
         next();

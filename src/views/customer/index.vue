@@ -35,6 +35,7 @@
         <router-view/>
       </div>
     </v-main>
+
   </v-app>
 
 </template>
@@ -54,7 +55,7 @@ export default {
         AppMenu,
         AddressBar,
         NavDrawer,
-        DrawerToggle,
+        DrawerToggle
     },
     data: () => ({
         drawer: true

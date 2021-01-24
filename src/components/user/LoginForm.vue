@@ -69,7 +69,19 @@ export default {
       this.isTrying = true
       const status = await this.$store.dispatch('user/login', {username, password});
       if (status.code === 200) {
-        await this.$router.push('/app')
+        const userType = this.$store.getters["user/getType"]
+        switch (userType) {
+          case "Administrator":
+            await this.$router.push('/admin')
+            break
+          case "Sales Manager":
+            await this.$router.push('/sales')
+            break
+          case "Inventory Manager":
+            await this.$router.push('/inventory')
+            break
+        }
+        
       } else {
         this.$vToastify.error(status.message, "Error")
       }

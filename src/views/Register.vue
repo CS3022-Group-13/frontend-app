@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-main class="bg2">
+        <v-main class="bg4">
             <v-container
                     fluid
                     class="fill-height"
@@ -10,7 +10,6 @@
             </v-container>
 
         </v-main>
-        <PopAlert />
         <HomeButton />
 
     </v-app>
@@ -18,14 +17,12 @@
 
 <script>
     import RegisterForm from "../components/user/RegisterForm";
-    import PopAlert from "../components/PopAlert";
     import HomeButton from "../components/home/HomeButton";
 
     export default {
         name: "Register",
         components: {
             HomeButton,
-            PopAlert,
             RegisterForm
         },
         async created() {

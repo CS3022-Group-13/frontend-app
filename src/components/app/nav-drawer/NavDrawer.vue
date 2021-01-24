@@ -23,10 +23,12 @@
 
       <v-divider/> -->  
 
-      <AdminNavItems v-if="role === 'Administrator'"/>
+      <slot />
+
+      <!-- <AdminNavItems v-if="role === 'Administrator'"/>
       <DisOffNavItems v-else-if="role === 'Sales Manager'" />
       <DisSecNavItems v-else-if="role === 'Inventory Manager'" />
-      <DivSecNavItems v-else-if="role === 'Customer'" />
+      <DivSecNavItems v-else-if="role === 'Customer'" /> -->
 
     </v-list>
 
@@ -68,8 +70,8 @@ export default {
         show: true
     }),
     computed: {
-        role() {
-            return this.$store.getters["user/getRole"]
+        userType() {
+            return this.$store.getters["user/getType"]
         }
     }
 }

@@ -1,7 +1,5 @@
 <template>
     <div>
-<!--        <v-btn to="/app" small color="success">DASHBOARD</v-btn>-->
-        <!-- <v-btn  small color="success">USER LOGIN</v-btn> -->
        <v-btn
             :to="route"
             tile
@@ -16,7 +14,7 @@
     import {mapState} from 'vuex'
 
     export default {
-        name: "LoginButton",
+        name: "CustomButton",
         props: ["text", "route"],
         computed: {
         }
