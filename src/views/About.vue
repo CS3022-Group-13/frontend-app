@@ -5,214 +5,20 @@
     <!--        <v-main class="bg">-->
     <v-main style="">
       <!--  Opening Banner  -->
-      <v-container fluid class="fill-height">
+      <v-container fluid class="pa-0 ma-0" >
+        <v-img class="background" src="@/assets/test2.jpeg"></v-img>
+        <AboutSheet class="about-sheet"/>
       </v-container>
+      
+      
 
-      <!-- CTA section  -->
-
-      <v-container
-        fluid
-        style="
-          height: 100px;
-          background: #3aafa9;
-          display: flex;
-          align-content: center;
-        "
-      >
-        <v-container class="pa-0">
-          <v-row>
-            <v-container style="width: 70%" class="pa-0">
-              <v-card-title style="color: #545863">
-                </v-card-title
-              >
-            </v-container>
-
-            <v-container style="width: 20%">
-              <v-btn to="/add-complaint" color="error">
-                </v-btn
-              >
-            </v-container>
-          </v-row>
-        </v-container>
-      </v-container>
-
-      <!--            About Us Section-->
-
-      <section>
-        <v-row>
-          <v-col class="pa-0">
-            <v-card
-              height="350px"
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: #545863;
-                color: white;
-              "
-            >
-              <v-container class="text-center" style="padding: 16%">
-                <h3></h3>
-                <br />
-                <p style="text-align: justify">}</p>
-              </v-container>
-            </v-card>
-          </v-col>
-          <v-col class="pa-0" style="max-width: 50%">
-            <v-img
-              max-height="350px"
-              src="https://www.cesl.lk/images/projects/completed/Eight%20Storey%20District%20Secretariat%20Building%20at%20Galle_39_cesl.jpg"
-            >
-            </v-img>
-          </v-col>
-        </v-row>
-
-        <v-row>
-          <v-col class="pa-0" style="max-width: 50%">
-            <v-img
-              max-height="350px"
-              src="https://www.cesl.lk/images/projects/completed/Eight%20Storey%20District%20Secretariat%20Building%20at%20Galle_39_cesl.jpg"
-            >
-            </v-img>
-          </v-col>
-          <v-col class="pa-0">
-            <v-card
-              height="350px"
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: #545863;
-                color: white;
-              "
-            >
-              <v-container class="text-center" style="padding: 16%">
-                <h3>asd</h3>
-                <br />
-                <p style="text-align: justify">
-                  asd <br /><br />
-                  asd <br />
-                  asd <br />
-                  asd
-                </p>
-              </v-container>
-            </v-card>
-          </v-col>
-        </v-row>
-      </section>
-
-      <!--         End of About Us Section-->
-
-      <!-- Stats section -->
-      <v-bottom-navigation height="120px" background-color="primary">
-        <v-row style="align-content: center">
-          <v-col>
-            <v-row class="stats values" style="padding: 0; margin: 0">
-              <ProgressIndicator
-                :value="customerCount"
-                color="black"
-                indeterminate="false"
-              />
-            </v-row>
-            <v-row class="stats"> asd</v-row>
-          </v-col>
-
-          <v-col>
-            <v-row class="stats values" style="padding: 0; margin: 0">
-              <ProgressIndicator
-                :value="inProgressCount"
-                color="red"
-                indeterminate="false"
-              />
-            </v-row>
-            <v-row class="stats"> asd</v-row>
-          </v-col>
-
-          <v-col>
-            <v-row class="stats values" style="padding: 0; margin: 0">
-              <ProgressIndicator
-                :value="solvedCount"
-                color="green"
-                indeterminate="false"
-              />
-            </v-row>
-            <v-row class="stats"> asd</v-row>
-          </v-col>
-        </v-row>
-      </v-bottom-navigation>
-
-      <!-- End of Stats section -->
-
-      <v-divider></v-divider>
-
-      <v-container fluid class="transparent pa-0">
-        <v-row no-gutters>
-          <v-col cols="6" md="4" class="pd-3">
-            <v-card class="primary pa-12 pl-16 pr-16 ma-0" tile>
-              <v-card-title class="pa-0 pb-5">
-                asd</v-card-title
-              >
-              asd<br />
-              <br />
-
-              <v-btn class="mx-1" color="black" outlined>
-                asd
-              </v-btn>
-              <br />
-              <br />
-              ads
-              <br />
-              <br />
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-              <v-btn outlined class="mx-1 associations" color="black">
-                asd</v-btn
-              >
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+    
     </v-main>
 
-    <v-divider></v-divider>
 
     <!--  Footer   -->
 
-    <v-footer padless color="primary">
+    <v-footer padless class="footer">
       <FooterCard />
     </v-footer>
   </v-app>
@@ -224,6 +30,7 @@ import FooterCard from "@/components/home/FooterCard";
 import ProgressIndicator from "@/components/home/ProgressIndicator";
 import LanguageSelector from "@/components/home/LanguageSelector";
 import Header from "@/components/home/Header"
+import AboutSheet from "@/components/home/About";
 
 export default {
   name: "Home",
@@ -231,7 +38,8 @@ export default {
     FooterCard,
     ProgressIndicator,
     LanguageSelector,
-    Header
+    Header,
+    AboutSheet
   },
   data: () => ({
     language: "english",
@@ -285,4 +93,24 @@ export default {
   margin-top: 20px;
   text-align: center;
 }
+
+.background{
+  z-index: 0;
+  top:0;
+  bottom: 0;
+  /* filter: contrast(80%); */
+  filter:opacity(0.3);
+ 
+}
+
+.about-sheet{
+  z-index: 3;
+  position: absolute;
+  top:20%;
+  left: 25%;
+  border-radius: 2rem;
+
+}
+
+
 </style>

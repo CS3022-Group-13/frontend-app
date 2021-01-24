@@ -1,35 +1,13 @@
 <template>
 <v-card
-    class="flex"
+    class="flex trademark "
       flat
       tile
-      color="secondary"
+      color="#1aa6b7"
     >
-      <v-card-title class="pt-5 pa-0">
-        <a href="http://www.galle.dist.gov.lk/index.php/en/" target="_blank">
-          <v-btn text color="black" to="">Visit Galle District Secretariat</v-btn></a>
-        <v-spacer></v-spacer>
-
-        <a 
-        v-for="icon in icons"
-          :key="icon.name"
-          :href="icon.url"
-        >
-        <v-btn
-          class="mx-4"
-          dark
-          icon
-
-          
-        >
-       
-          <v-icon size="32px" color="black">{{ icon.name }}</v-icon>
-        </v-btn>
-        </a>
-      </v-card-title>
-
-      <v-card-text class="py-2 black--text">
-       Copyright © {{ new Date().getFullYear() }} Galle District Public Grievance Management. All Rights Reserved.
+     
+      <v-card-text class=" py-2 black--text">
+          Copyright © Company Name. All Rights Reserved.
       </v-card-text>
     </v-card>
  
@@ -38,20 +16,16 @@
 <script>
   export default {
     data: () => ({
-      icons: [
-          {
-        name:'mdi-facebook',
-        url: 'https://www.facebook.com/Galle.DS/'
-        },
-        {
-        name:'mdi-twitter',
-        url:'https://twitter.com/DistrictGalle'
-        }
-      ],
+      
     }),
   }
 </script>
 
 <style scoped>
+
+
+.trademark{
+  text-align: center;
+}
 
 </style>
