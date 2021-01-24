@@ -29,6 +29,12 @@
             class="mr-1"
         > ADD
         </ActionButton>
+        <ActionButton
+            color="red"
+            @click="removeFromCart(item)"
+            class="mr-1"
+        > REMOVE
+        </ActionButton>
       </template>
     </DataTable>
   </v-container>
@@ -114,6 +120,17 @@ export default {
         }
       }
       this.selectedProducts.push({...item, quantity: 1})
+    },
+    async removeFromCart(item) {
+      item.quantity += 1
+      for (let selectedItem of this.selectedProducts) {
+        if (selectedItem.productId === item.productId) {
+          selectedItem.quantity -= 1
+          if (selectedItem.quantity === 0) {
+            this.selectedProducts = this.selectedProducts.filter(p => p.productId !== selectedItem.productId)
+          }
+        }
+      }
     },
   },
   async created() {
