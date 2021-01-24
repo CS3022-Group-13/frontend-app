@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 
 import { adminRoutes } from '@/router/admin';
 import { cusRoutes } from '@/router/cus';
+import {inventoryRoutes} from "@/router/iMan"
 
 import Home from '../views/Home.vue';
 import About from '@/views/About.vue';
@@ -40,6 +41,11 @@ const routes: Array<RouteConfig> = [
 		path: '/admin',
 		component: () => import(/* webpackChunkName: "web-app" */ '../views/app/admin/index.vue'),
 		children: adminRoutes
+	},
+	{
+		path: '/inventory',
+		component: () => import(/* webpackChunkName: "web-app" */ '../views/app/iMan/index.vue'),
+		children: inventoryRoutes
 	}
 	// {
 	// 	path: '/sales',

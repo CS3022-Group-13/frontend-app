@@ -3,7 +3,7 @@
     class="flex"
       flat
       tile
-      color="primary"
+      color="secondary"
     >
       <v-card-title class="pt-5 pa-0">
         <a href="http://www.galle.dist.gov.lk/index.php/en/" target="_blank">

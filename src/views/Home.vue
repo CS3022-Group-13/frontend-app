@@ -9,14 +9,9 @@
         <v-img class="background" src="@/assets/test2.jpeg"></v-img>
       </v-container>
 
-     
-
-
-
-     
+    
     </v-main>
 
-    <v-divider></v-divider>
 
     <!--  Footer   -->
 
@@ -101,7 +96,5 @@ export default {
  
 }
 
-.footer{
-  background-color: #1aa6b7;
-}
+
 </style>
