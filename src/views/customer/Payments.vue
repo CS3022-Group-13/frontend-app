@@ -52,22 +52,20 @@ export default {
     headers: [
       {
         text: 'Order ID',
-        value: 'orderId'
+        value: 'paymentId'
       },
       {
         text: 'Customer',
         value: 'customerId'
       },
       {
-        text: 'Status',
-        value: 'orderStatus'
+        text: 'Invoice',
+        value: 'invoiceId'
       },
       {
-        text: 'Actions',
-        value: 'actions',
-        align: 'center',
-        width: 200
-      }
+        text: 'Amount',
+        value: 'amount'
+      },
     ],
     payments: []
   }),
@@ -78,7 +76,7 @@ export default {
   },
   async created() {
     this.loading = true
-    const [paymentList, status] = await api.payment.findPayment({})
+    const [paymentList, status] = await api.payment.findPayment({customerId: this.customerId})
     if (status.code === 200) {
       this.payments = paymentList
     } else {

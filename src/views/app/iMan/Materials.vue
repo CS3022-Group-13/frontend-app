@@ -20,13 +20,13 @@
         >
           Update
         </ActionButton>
-        <ActionButton
-            color="red"
-            class="ma-1"
-            @click="removeMaterial(item)"
-        >
-          Remove
-        </ActionButton>
+<!--        <ActionButton-->
+<!--            color="red"-->
+<!--            class="ma-1"-->
+<!--            @click="removeMaterial(item)"-->
+<!--        >-->
+<!--          Remove-->
+<!--        </ActionButton>-->
       </template>
     </DataTable>
 
@@ -119,14 +119,18 @@ export default {
         return
       }
       this.$vToastify.info(status.message, 'Done')
-      this.materials.push(item)
+      for (let s of this.materials) {
+        if (s.materialId === item.materialId) {
+          Object.assign(s, item)
+        }
+      }
       this.dialogUpdateMaterial = false
       this.loading = false
     },
     async removeMaterial(item) {
       this.loading = true
       console.log(item.materialId)
-      const status = await api.material.updateMaterial(item.materialId)
+      const status = await api.material.removeMaterial(item.materialId)
       if (status.code !== 200) {
         this.$vToastify.error(status.message, 'error')
         this.loading = false

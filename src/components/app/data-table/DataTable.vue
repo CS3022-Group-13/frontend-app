@@ -4,7 +4,6 @@
       :headers="headers"
       :items="items"
       :search="search"
-      hide-default-footer
   >
     <template v-slot:top >
       <div class="table-heading" >

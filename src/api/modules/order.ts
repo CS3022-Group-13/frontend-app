@@ -5,9 +5,12 @@ export const orderApi = {
 
     async placeOrder(data: any): Promise<Status> {
         try {
+            console.log("Here")
             const res = await apiConn.post(`api/order/place-order`, data);
+            console.log(res)
             return toStatus(res);
         } catch (e) {
+            console.log(e.response)
             return toStatus(e.response);
         }
     },

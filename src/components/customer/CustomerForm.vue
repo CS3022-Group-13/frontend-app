@@ -164,8 +164,9 @@ export default {
 
       if (this.valid) {
         this.loading = true
-
+        console.log(this.customerData)
         const [customerId, status] = await api.customer.addCustomer(this.customerData)
+        console.log(status)
         if (status.code !== 200) {
           this.$vToastify.error(status.message, 'Error')
           this.loading = false

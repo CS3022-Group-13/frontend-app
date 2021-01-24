@@ -15,8 +15,7 @@ export const paymentApi = {
     async findPayment(cond: any): Promise<[any, Status]> {
         try {
             const res = await apiConn.get(`api/payment/get-details`, cond);
-            console.log(res)
-            return [[], toStatus(res)];
+            return [res.data.data, toStatus(res)];
         } catch (e) {
             return [null, toStatus(e.response)];
         }

@@ -39,12 +39,12 @@ export default {
       'dialog'
   ],
   data: () => ({
-    // item: {
-    //   productId: '',
-    //   productName: '',
-    //   quantity: '',
-    //   unitPrice: ''
-    // }
+    item: {
+      productId: '',
+      productName: '',
+      quantity: '',
+      unitPrice: ''
+    }
   }),
   methods: {
     submit() {

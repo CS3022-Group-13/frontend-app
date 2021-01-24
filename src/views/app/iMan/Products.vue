@@ -20,13 +20,13 @@
         >
           Update
         </ActionButton>
-        <ActionButton
-            color="red"
-            class="ma-1"
-            @click="removeProduct(item)"
-        >
-          Remove
-        </ActionButton>
+<!--        <ActionButton-->
+<!--            color="red"-->
+<!--            class="ma-1"-->
+<!--            @click="removeProduct(item)"-->
+<!--        >-->
+<!--          Remove-->
+<!--        </ActionButton>-->
       </template>
     </DataTable>
 
@@ -120,7 +120,11 @@ export default {
         return
       }
       this.$vToastify.info(status.message, 'Done')
-      this.products.push(item)
+      for (let s of this.products) {
+        if (s.productId === item.productId) {
+          Object.assign(s, item)
+        }
+      }
       this.dialogBoxForward = false
       this.loading = false
     },
