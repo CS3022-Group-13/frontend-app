@@ -29,8 +29,9 @@
     </v-app-bar>
 
     <NavDrawer :toggle="drawer">
-        <NavItem name="Dashboard" icon="mdi-view-dashboard" link="/admin"/>  
-        <NavItem name="Manage Users" icon="mdi-account" link="/admin/users"/>  
+        <NavItem name="Dashboard" icon="mdi-view-dashboard" link="/inventory"/>
+        <NavItem name="Manage Products" icon="mdi-account" link="/inventory/products"/>
+        <NavItem name="Manage Materials" icon="mdi-account" link="/inventory/materials"/>
     </NavDrawer>
 
     <v-main class="secondary">

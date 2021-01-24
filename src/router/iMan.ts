@@ -7,9 +7,14 @@ export const inventoryRoutes: Array<RouteConfig> = [
         component: () => import(/* webpackChunkName: "admin-app" */ '../views/app/iMan/Dashboard.vue')
     },
     {
-        path: 'users',
-        name: 'User List',
-        component: () => import(/* webpackChunkName: "admin-app" */ '../views/app/iMan/UserList.vue')
+        path: 'products',
+        name: 'Product List',
+        component: () => import(/* webpackChunkName: "admin-app" */ '../views/app/iMan/Products.vue')
+    },
+    {
+        path: 'materials',
+        name: 'Material List',
+        component: () => import(/* webpackChunkName: "admin-app" */ '../views/app/iMan/Materials.vue')
     },
     // {
     //     path: 'login',

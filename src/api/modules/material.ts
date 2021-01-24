@@ -1,29 +1,29 @@
 import {Status, toStatus} from "@/api/core";
 import {apiConn} from "@/api/conn";
 
-export const productApi = {
+export const materialApi = {
 
-    async addProduct(data: any): Promise<Status> {
+    async addMaterial(data: any): Promise<Status> {
         try {
-            const res = await apiConn.post(`api/product/register`, data);
+            const res = await apiConn.post(`api/material/register`, data);
             return toStatus(res);
         } catch (e) {
             return toStatus(e.response);
         }
     },
 
-    async getProducts(cond: any): Promise<[any, Status]> {
+    async getMaterials(cond: any): Promise<[any, Status]> {
         try {
-            const res = await apiConn.get(`api/product/view`, cond);
+            const res = await apiConn.get(`api/material/view`, cond);
             return [res.data.data, toStatus(res)];
         } catch (e) {
             return [null, toStatus(e.response)];
         }
     },
 
-    async updateProduct(productId: string, data: any): Promise<Status> {
+    async updateMaterial(materialId: string, data: any): Promise<Status> {
         try {
-            const res = await apiConn.put(`api/product/update/${productId}`, data);
+            const res = await apiConn.put(`api/material/update/${materialId}`, data);
             return toStatus(res);
         } catch (e) {
             return toStatus(e.response);
@@ -31,9 +31,9 @@ export const productApi = {
     },
 
 
-    async removeProduct(productId: string): Promise<Status> {
+    async removeMaterial(materialId: string): Promise<Status> {
         try {
-            const res = await apiConn.delete(`api/product/delete/${productId}`);
+            const res = await apiConn.delete(`api/material/delete/${materialId}`);
             return toStatus(res);
         } catch (e) {
             return toStatus(e.response);
@@ -41,27 +41,27 @@ export const productApi = {
     },
 
     stock : {
-        async addProductStock(data: any): Promise<Status> {
+        async addMaterialStock(data: any): Promise<Status> {
             try {
-                const res = await apiConn.post(`api/product/stock/register`, data);
+                const res = await apiConn.post(`api/material/stock/register`, data);
                 return toStatus(res);
             } catch (e) {
                 return toStatus(e.response);
             }
         },
 
-        async getProductStocks(cond: any): Promise<Status> {
+        async getMaterialStocks(cond: any): Promise<Status> {
             try {
-                const res = await apiConn.get(`api/product/stock/view`, cond);
+                const res = await apiConn.get(`api/material/stock/view`, cond);
                 return toStatus(res);
             } catch (e) {
                 return toStatus(e.response);
             }
         },
 
-        async updateProductStock(stockId: string, data: any): Promise<Status> {
+        async updateMaterialStock(stockId: string, data: any): Promise<Status> {
             try {
-                const res = await apiConn.put(`api/product/stock/update/${stockId}`, data);
+                const res = await apiConn.put(`api/material/stock/update/${stockId}`, data);
                 return toStatus(res);
             } catch (e) {
                 return toStatus(e.response);
@@ -69,9 +69,9 @@ export const productApi = {
         },
 
 
-        async removeProductStock(stockId: string): Promise<Status> {
+        async removeMaterialStock(stockId: string): Promise<Status> {
             try {
-                const res = await apiConn.delete(`api/product/stock/delete/${stockId}`);
+                const res = await apiConn.delete(`api/material/stock/delete/${stockId}`);
                 return toStatus(res);
             } catch (e) {
                 return toStatus(e.response);

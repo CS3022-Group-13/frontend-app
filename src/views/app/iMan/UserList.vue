@@ -95,7 +95,7 @@ export default {
         if (status.code === 200) {
             this.users = userList
         } else {
-            this.$vToastify(status.message, "Error")
+            this.$vToastify.error(status.message, "Error")
         }
         this.loading = false
     }
