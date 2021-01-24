@@ -1,7 +1,14 @@
 import axios, {AxiosInstance} from "axios";
 
-const LOCAL_API = "http://localhost:8000"
+/**
+ * Change this URL for configure REST API host
+ * Ex: REMOTE_API = "http://localhost:8000"
+ */
 const REMOTE_API = "https://eims-rest-api.herokuapp.com"
+
+/**
+ * --------------------------------------------------------------------
+ */
 
 class ApiConnection {
     static readonly instance = new ApiConnection();

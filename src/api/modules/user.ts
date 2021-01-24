@@ -101,12 +101,13 @@ export const userApi = {
         }
     },
 
-    async resetPassword(userId: string): Promise<Status> {
+    async resetPassword(userId: string): Promise<[any, Status]> {
         try {
             const res = await apiConn.put(`api/user/reset-pass/${userId}`);
-            return toStatus(res);
+            console.log(res)
+            return [res.data.data.password, toStatus(res)];
         } catch (e) {
-            return toStatus(e.response)
+            return [null, toStatus(e.response)]
         }
     }
 

@@ -10,7 +10,7 @@
                     color="success"
                     class="ma-2"
                     width="90%"
-                    to="/app"
+                    to="/customer"
             >
                 DASHBOARD
             </v-btn>

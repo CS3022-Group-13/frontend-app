@@ -31,11 +31,11 @@
         },
         computed: {
             isAuth() {
-                return this.$store.getters["user/isAuth"]
+                return this.$store.getters["customer/isAuth"]
             }
         },
         beforeRouteEnter(from, to, next) {
-            store.dispatch('user/loadLocalStorage')
+            store.dispatch('customer/loadLocalStorage')
             next()
         }
     }
